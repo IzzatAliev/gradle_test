@@ -1,4 +1,4 @@
-package ua.com.alevel;
+package ua.com.alevel.director;
 
 public class Director {
 

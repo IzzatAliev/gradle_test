@@ -1,7 +1,4 @@
-package ua.com.alevel;
-
-import ua.com.alevel.car.Car;
-import ua.com.alevel.car.CarStore;
+package ua.com.alevel.car;
 
 import java.util.ArrayList;
 import java.util.List;

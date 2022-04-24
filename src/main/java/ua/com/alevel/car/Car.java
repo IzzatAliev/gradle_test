@@ -1,6 +1,6 @@
-package ua.com.alevel;
+package ua.com.alevel.car;
 
-public class Car {
+public class Car implements Comparable<Car> {
 
     public Car(String name, String model, String id, Double price) {
         this.name = name;
@@ -53,5 +53,10 @@ public class Car {
                 ", id='" + id + '\'' +
                 ", price=" + price +
                 '}';
+    }
+
+    @Override
+    public int compareTo(Car o) {
+        return name.compareTo(o.name);
     }
 }
