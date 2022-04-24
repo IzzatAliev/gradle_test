@@ -5,7 +5,6 @@ import ua.com.alevel.car.CarStore;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.TreeMap;
 import java.util.TreeSet;
 
 public class Executor {
@@ -25,15 +24,12 @@ public class Executor {
             System.out.println(car);
         }
         Executor executor = new Executor();
-        System.out.println("getcars");
-        executor.sort(carStore.getCars());
         System.out.println("cars");
         executor.sort(cars);
     }
 
-    public List<Car> sort(List<Car> list){
+    public void sort(List<Car> list){
         TreeSet<Car> carTreeSet = new TreeSet<>(list);
-        return new ArrayList<>(carTreeSet);
+        System.out.println(new ArrayList<>(carTreeSet));
     }
-
 }
