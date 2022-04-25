@@ -2,6 +2,9 @@ package ua.com.alevel.thread;
 
 import java.util.Random;
 import java.util.concurrent.*;
+import java.util.concurrent.locks.Condition;
+import java.util.concurrent.locks.Lock;
+import java.util.concurrent.locks.ReentrantLock;
 
 public class ThreadMain {
 
@@ -9,6 +12,11 @@ public class ThreadMain {
 
     public static void main(String[] args) {
 
+    }
+
+    public void sum(){
+        Lock lock = new ReentrantLock();
+        Condition condition = lock.newCondition();
     }
 
 
