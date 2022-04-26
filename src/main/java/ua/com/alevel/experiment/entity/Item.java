@@ -51,7 +51,7 @@ public abstract class Item {
 
     @Override
     public String toString() {
-        return "Item{" +
+        return "\nItem{" +
                 "id=" + id + " " +
                 "name='" + name + '\'' +
                 ", price=" + price +
