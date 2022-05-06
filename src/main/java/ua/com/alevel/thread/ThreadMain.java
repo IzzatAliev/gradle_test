@@ -10,8 +10,11 @@ public class ThreadMain {
 
     static ExecutorService executorService = Executors.newFixedThreadPool(4);
 
-    public static void main(String[] args) {
-
+    public static void main(String[] args) throws InterruptedException, ExecutionException {
+            Callabler callabler = new Callabler();
+        System.out.println(executorService.submit(callabler).get().intValue());
+        System.out.println(executorService.isShutdown());
+        System.out.println(executorService.isTerminated());
     }
 
     public void sum(){
@@ -37,7 +40,7 @@ public class ThreadMain {
 
         @Override
         public void run() {
-            for (int i = 1; i < 6; i++) {
+            for (int i = 1; i < 345654; i++) {
                 System.out.println();
             }
         }
@@ -48,7 +51,7 @@ public class ThreadMain {
         @Override
         public Integer call() throws Exception {
             Integer sum = 0;
-            for (int i = 1; i < 6; i++) {
+            for (int i = 1; i < 345643; i++) {
                 sum += i;
             }
             return sum;
