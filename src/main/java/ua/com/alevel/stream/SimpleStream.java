@@ -2,6 +2,7 @@ package ua.com.alevel.stream;
 
 import java.util.*;
 
+
 public class SimpleStream {
 
     public List<Integer> list = new ArrayList<>();
@@ -11,8 +12,9 @@ public class SimpleStream {
     }
 
     public void add() {
-        for (int i = 0; i < 150; i++) {
-            list.add(i);
+        Random random = new Random();
+        for (int i = 1; i < 150; i++) {
+            list.add(random.nextInt(1, 299));
         }
     }
 
@@ -30,7 +32,10 @@ public class SimpleStream {
     }
 
     public void sortAsc() {
-        List<Integer> result = list.stream().sorted(Comparator.comparingInt(p -> p)).toList();
+//        List<Integer> result = list.stream().sorted(Comparator.comparingInt(p -> p)).toList();
+//        TreeSet<Integer> treeSet = new TreeSet<>(list);
+//        List<Integer> result =new ArrayList<>(treeSet);
+        List<Integer> result = list.stream().sorted().toList();
         System.out.println("result asc = " + result);
     }
 
