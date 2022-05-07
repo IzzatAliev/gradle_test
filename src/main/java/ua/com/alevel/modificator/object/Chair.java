@@ -39,6 +39,11 @@ public class Chair {
         return chair;
     }
 
+    Chair defaultNewChair(){
+        Chair chair = new Chair();
+        return chair;
+    }
+
     public void publicChair(){
         System.out.println("heavyChair");
     }

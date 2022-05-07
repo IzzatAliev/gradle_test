@@ -1,5 +1,7 @@
 package ua.com.alevel.car;
 
+import ua.com.alevel.exception.MyException;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.TreeSet;
@@ -25,8 +27,12 @@ public class Executor {
         executor.sort(cars);
     }
 
-    public void sort(List<Car> list){
-        TreeSet<Car> carTreeSet = new TreeSet<>(list);
-        System.out.println(new ArrayList<>(carTreeSet));
+    public void sort(List<Car> list) {
+        try {
+            TreeSet<Car> carTreeSet = new TreeSet<>(list);
+            System.out.println(new ArrayList<>(carTreeSet));
+        } catch (Exception e) {
+            throw new MyException(e);
+        }
     }
 }

@@ -3,7 +3,7 @@ package ua.com.alevel.modificator.objectTest;
 public class Extender extends ObjectTMain {
 
     @Override
-    protected void protectedChair() {
+    public void protectedChair() {
         super.protectedChair();
     }
 

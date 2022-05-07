@@ -10,6 +10,7 @@ public class MainObject {
         chair.defaultChair();
         chair.protectedChair();
         chair.publicChair();
+        chair.defaultNewChair();
     }
 
 }

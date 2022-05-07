@@ -2,16 +2,20 @@ package ua.com.alevel.car;
 
 public class Car implements Comparable<Car> {
 
+    private String id;
+    private String name;
+    private String model;
+    private Double price;
+
+    public Car() {
+    }
+
     public Car(String name, String model, String id, Double price) {
         this.name = name;
         this.model = model;
         this.id = id;
         this.price = price;
     }
-    private String name;
-    private String model;
-    private String id;
-    private Double price;
 
     public String getName() {
         return name;

@@ -43,4 +43,8 @@ public class SimpleStream {
         List<Integer> result = list.stream().sorted((p, k) -> k - p).toList();
         System.out.println("result desc = " + result);
     }
+
+    public void summary(){
+        System.out.println(list.stream().reduce(Integer::sum));
+    }
 }
