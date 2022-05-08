@@ -28,6 +28,10 @@ dependencies {
     implementation 'org.postgresql:postgresql:42.3.4'
 //    hibernate
     implementation 'org.hibernate:hibernate-core:6.0.1.Final'
+//    javamailsender
+    implementation 'com.sun.mail:javax.mail:1.6.2'
+//    apache config for application.properties
+    implementation 'commons-configuration:commons-configuration:1.10'
 }
 
 test {
