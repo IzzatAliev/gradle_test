@@ -1,17 +1,33 @@
 package ua.com.alevel.jdbc;
 
+import org.apache.commons.configuration.ConfigurationException;
+import org.apache.commons.configuration.PropertiesConfiguration;
+
 import java.sql.*;
 
 public class JdbcMain {
 
-    public static void main(String[] args) throws SQLException {
+    public static void main(String[] args) throws SQLException, ConfigurationException {
         JdbcMain jdbcMain = new JdbcMain();
         jdbcMain.connect();
     }
 
-    public void connect() throws SQLException {
-        Connection connection = DriverManager.getConnection("jdbc:postgresql://localhost:5432/test", "root", "undi");
-        Statement statement = connection.createStatement();
+    String url;
+    String user;
+    String password;
+
+    public void config() throws ConfigurationException {
+        PropertiesConfiguration configuration = new PropertiesConfiguration();
+        configuration.load("src/main/resources/application.yml");
+        url = configuration.getString("url");
+        user = configuration.getString("user");
+        password = configuration.getString("password");
+    }
+
+    public void connect() throws SQLException, ConfigurationException {
+        config();
+        Connection connection = DriverManager.getConnection(url, user, password);
+//        Statement statement = connection.createStatement();
 //        statement.executeUpdate("insert into cars(id, name, model, price) values (3,'audi','a8',800.0)");
         PreparedStatement preparedStatement = connection.prepareStatement("insert into cars(id, name, model, price) values(?,?,?,?)");
         preparedStatement.setInt(1,4);

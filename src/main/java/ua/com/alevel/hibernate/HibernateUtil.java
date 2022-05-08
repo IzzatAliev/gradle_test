@@ -1,8 +1,6 @@
 package ua.com.alevel.hibernate;
 
-import jakarta.persistence.criteria.CriteriaBuilder;
-import jakarta.persistence.criteria.CriteriaQuery;
-import jakarta.persistence.criteria.Root;
+import jakarta.persistence.criteria.*;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
@@ -24,13 +22,11 @@ public class HibernateUtil {
                 .buildSessionFactory();
              Session session = sessionFactory.openSession();) {
             session.getTransaction().begin();
-//            session.persist(new Car("audi", "a8", 600.0));
+            session.persist(new Car("toyota", "x570", 600.0));
 //            session.beginTransaction().commit(); NO NEED
 //            CriteriaBuilder criteriaBuilder = session.getCriteriaBuilder(); //DDL
 //            CriteriaQuery<Car> criteriaQuery = criteriaBuilder.createQuery(Car.class);//DML
 //            Root<Car> root = criteriaQuery.from(Car.class);
-//            criteriaQuery.select(root.get("id")).from(Car.class);
-//            session.createQuery(criteriaQuery);
             session.flush();
         }
     }
