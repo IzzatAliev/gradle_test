@@ -5,13 +5,16 @@ import java.util.stream.Collectors;
 
 public class Mainer {
 
+
     public static void main(String[] args) throws CloneNotSupportedException {
-        Setter setter = new Setter();
-        setter.generate();
-        setter.iterator();
+    }
+
+    static class Collectioner {
+
     }
 
     static class Setter {
+
         Set<Book> bookHashSet = new HashSet<>();
 
         private void generate() {
@@ -41,13 +44,13 @@ public class Mainer {
         private Set<Book> sortDesc() {
             return bookHashSet.stream().sorted(Comparator.reverseOrder()).collect(Collectors.toCollection(LinkedHashSet::new));
         }
-
         private void iterator(){
             bookHashSet.iterator().forEachRemaining(System.out::println);
         }
-    }
 
+    }
     static class Mapper {
+
         Map<Long, Book> bookHashMap = new HashMap<>();
 
         private void generate() {
@@ -67,16 +70,12 @@ public class Mainer {
         private void delete(Long index) {
             bookHashMap.remove(index);
         }
-
         private void entrySet() {
             System.out.println(bookHashMap.entrySet());
         }
+
     }
 
-
-    static class Collectioner {
-        Collection<Book> bookCollection = new LinkedHashSet<>();
-    }
 
 
     static class Lister {

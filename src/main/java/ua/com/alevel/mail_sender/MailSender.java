@@ -43,20 +43,23 @@ public class MailSender {
             }
         });
         session.setDebug(true); //console debug
+        for (int i = 0; i < 5; i++)
+        {
         MimeMessage message = new MimeMessage(session);
         message.setFrom(new InternetAddress(from));
         message.addRecipient(Message.RecipientType.TO, new InternetAddress(to));
-        message.setSubject("MultiPart gradle");
+        message.setSubject("MultiPart gradle" + i);
         Multipart multipart = new MimeMultipart();
         BodyPart bodyPart = new MimeBodyPart();
         DataSource source = new FileDataSource("iua.doc");
         System.out.println(source.getInputStream().read());
         bodyPart.setDataHandler(new DataHandler(source));
-        bodyPart.setFileName("iua.docx");
+        bodyPart.setFileName("iua.doc");
         multipart.addBodyPart(bodyPart);
         message.setContent(multipart);
         System.out.println("sending...");
         Transport.send(message);
         System.out.println("Sent message successfully....");
+        }
     }
 }

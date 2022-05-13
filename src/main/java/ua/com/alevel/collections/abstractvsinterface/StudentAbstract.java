@@ -16,6 +16,12 @@ public abstract class StudentAbstract {
         this.age = age;
     }
 
+    void hellos() {
+        System.out.println("hello");
+    }
+
+    abstract void hello();
+
     abstract Book get();
 
     public Book create(){

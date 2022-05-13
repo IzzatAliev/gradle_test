@@ -1,10 +1,8 @@
 package ua.com.alevel.hibernate;
 
-import jakarta.persistence.criteria.*;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
-
 
 import java.io.File;
 import java.sql.SQLException;

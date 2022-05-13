@@ -8,6 +8,11 @@ public class Testerator extends StudentAbstract implements StudentInterface {
         super(firstName, lastName, age);
     }
 
+    @Override
+    void hello() {
+        System.out.println("hello");
+    }
+
     public static void main(String[] args) {
 
     }
