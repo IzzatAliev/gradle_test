@@ -4,14 +4,16 @@ import java.util.Arrays;
 
 public class BubbleSort {
 
-    static int[] array = {13, 45, 23, 43, 34, 57, 87, 41, 91, 87, 99 , 11};
+    static int[] array = {13, 45, 23, 43, 34, 57, 87, 41, 91, 87, 99};
 
     public static void main(String[] args) {
         BubbleSort bubbleSort = new BubbleSort();
-        System.out.println(Arrays.toString(bubbleSort.bubbleSort(array)));
+        long start = System.currentTimeMillis();
+        bubbleSort.bubbleSort(array);
+        System.out.println(System.currentTimeMillis() - start);
     }
 
-    public int[] bubbleSort(int[] array){
+    public void bubbleSort(int[] array){
         boolean isSorted = false;
         while (!isSorted){
             isSorted = true;
@@ -24,7 +26,7 @@ public class BubbleSort {
                 }
             }
         }
-        return array;
+        System.out.println(Arrays.toString(array));
     }
 
 }

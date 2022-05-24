@@ -6,6 +6,7 @@ import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
+import java.util.Arrays;
 import java.util.stream.Stream;
 
 public class SimpleFile {
@@ -50,9 +51,8 @@ public class SimpleFile {
     }
 
     public void readInside(String path) throws IOException {
-        try (InputStream inputStream = new FileInputStream(path);
-             Reader reader = new FileReader(path)) {
-            BufferedReader bufferedReader = new BufferedReader(new FileReader(path));
+        try (Reader reader = new FileReader(path)) {
+            BufferedReader bufferedReader = new BufferedReader(reader);
             Stream<String> lines = bufferedReader.lines();
             lines.forEach(System.out::println);
         }

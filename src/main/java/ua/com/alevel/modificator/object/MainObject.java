@@ -1,6 +1,6 @@
 package ua.com.alevel.modificator.object;
 
-public class MainObject {
+public class MainObject extends Chair{
 
     public static void main(String[] args) {
       Chair chair = new Chair();

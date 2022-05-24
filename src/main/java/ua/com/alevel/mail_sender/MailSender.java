@@ -1,6 +1,5 @@
 package ua.com.alevel.mail_sender;
 
-import com.sun.mail.imap.IMAPBodyPart;
 import org.apache.commons.configuration.ConfigurationException;
 import org.apache.commons.configuration.PropertiesConfiguration;
 
